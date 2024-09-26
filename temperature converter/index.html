@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="temp_container">
+        <div class="header">
+            <span>Temperature Converter</span>
+            <div class="icon">
+                <i class="fa-solid fa-temperature-low"></i>
+            </div>
+        </div>
+        <div>
+            <div class="text_symbol">
+                <span>°C</span>
+                <div class="temp_icon"><i class="fa-solid fa-right-left"></i></div>
+                <span>°F</span>
+            </div>
+            <div class="input_temp">
+                <div class="celsius">
+                    <span class="text_celsius">Celsius</span>
+                    <input type="number" value="0" id="celsius">
+                </div>
+                <div class="fahrenheit">
+                    <span class="text_fahrenheit">Fahrenheit</span>
+                    <input type="number" value="32" id="fahrenheit">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

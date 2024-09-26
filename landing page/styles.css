@@ -1,0 +1,353 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+:root {
+  --primary-color: #dcb75b;
+  --secondary-color: rgb(53, 121, 53);
+  --tertiary-color: rgb(88, 161, 88);
+  --text-dark: #13313c;
+  --text-light: black;
+  --white: #ffffff;
+  --max-width: 100%;
+  --header-font: "Rubik", sans-serif;
+  --nav-bg-color: #cb8844;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+img {
+  display: flex;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--primary-color);
+}
+
+nav {
+  position: fixed;
+  isolation: isolate;
+  width: 100%;
+  z-index: 9;
+  background-color: var(--nav-bg-color);
+  height: 4rem;
+}
+
+.nav__header {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--text-dark);
+  margin-bottom: 2rem;
+}
+
+.nav__logo a {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.nav__logo a span {
+  padding: 3px 7px;
+  margin-inline: 5px;
+  font-size: 1rem;
+  background-color: var(--secondary-color);
+  border-radius: 100%;
+}
+
+.nav__menu__btn {
+  font-size: 1.5rem;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.nav__links {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--text-dark);
+  transition: 0.5s;
+  z-index: -1;
+  transform: translateY(-100%);
+  margin-bottom: 2rem;
+}
+
+.nav__links.open {
+  transform: translateY(0);
+}
+
+.nav__links a {
+  font-weight: 500;
+  color: var(--white);
+  transition: 0.3s;
+}
+
+.nav__links a:hover {
+  color: var(--secondary-color);
+}
+
+.nav__btns {
+  display: none;
+  margin-bottom: 2rem;
+}
+
+.header__container {
+  display: grid;
+  gap: 1rem;
+  padding-top: 2rem; 
+}
+
+.header__image img {
+  width: 30rem;
+  height: 30rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-inline: auto;
+  margin-bottom: 30%;
+  margin-left: 6%;
+  box-shadow: 0 8px 20px rgba(34, 139, 34, 0.8);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header__image img:hover {
+  transform: scale(1.1); 
+  box-shadow: 0 12px 30px rgba(34, 139, 34, 1);
+}
+
+.header__content {
+  text-align: center;
+}
+
+.header__content h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.header__content h1 {
+  margin-bottom: 1rem;
+  font-size: 4.25rem;
+  font-weight: 600;
+  font-family: var(--header-font);
+  line-height: 5rem;
+  color: var(--text-dark);
+}
+
+.header__content p {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.75rem;
+  color: var(--text-light);
+}
+
+.header__btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.header__btns img {
+  max-width: 150px;
+  border-radius: 5px;
+}
+
+/* Improved Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+  .header__image {
+    display: none;
+  }
+
+  .header__container {
+    display: block;
+    padding: 1rem; /* Added padding for smaller screens */
+  }
+
+  .header__content {
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .header__content h1 {
+    font-size: 2.5rem; /* Reduce heading size for smaller screens */
+    line-height: 3rem;
+  }
+
+  .header__content p {
+    font-size: 1rem; /* Reduce paragraph size */
+    line-height: 1.5rem;
+  }
+
+  .nav__links {
+    padding: 1rem; /* Reduce padding */
+  }
+}
+
+@media (min-width: 768px) {
+  nav {
+    position: static;
+    padding-block: 2rem 0;
+    padding-inline: 1rem;
+    max-width: var(--max-width);
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .nav__header {
+    flex: 1;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .nav__logo a {
+    font-size: 2rem;
+    color: var(--text-dark);
+  }
+
+  .nav__logo a span {
+    padding: 6px 9px;
+    color: var(--white);
+  }
+
+  .nav__menu__btn {
+    display: none;
+  }
+
+  .nav__links {
+    position: static;
+    padding: 0;
+    flex-direction: row;
+    background-color: transparent;
+    transform: none;
+  }
+
+  .nav__links a {
+    padding-block: 5px;
+    color: var(--text-light);
+    border-bottom: 2px solid transparent;
+  }
+
+  .nav__links a:hover {
+    border-color: var(--secondary-color);
+  }
+
+  .nav__btns {
+    display: flex;
+    flex: 1;
+  }
+
+  .nav__btns .btn {
+    padding: 0.75rem 2rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    white-space: nowrap;
+    color: var(--text-dark);
+    background-color: var(--tertiary-color);
+    border-radius: 5rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+  .nav__btns .btn:hover {
+    color: var(--white);
+    background-color: var(--secondary-color);
+  }
+
+  .header__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    padding-top: 0.1rem;
+  }
+
+  .header__image {
+    padding-top: 4rem;
+    grid-area: 1/2/2/3;
+    transform: scale(1.1rem);
+  }
+
+  .header__content {
+    text-align: left;
+  }
+
+  .header__btns {
+    justify-content: flex-start;
+  }
+}
+
+/* Extra small devices (max-width 480px) */
+@media (max-width: 480px) {
+  .header__content h1 {
+    font-size: 1.5rem; 
+    line-height: 2.5rem;
+    padding-top: 0.5rem;
+  }
+  .header__content h2 {
+    font-size: 2rem; 
+    line-height: 2.5rem;
+    margin-top: 3rem;
+    padding: 1rem;
+  }
+
+  .header__content p {
+    font-size: 0.9rem; 
+    line-height: 1.4rem;
+    margin-top: 2rem;
+  }
+
+  .header__btns {
+    flex-direction: column; 
+    gap: 0.5rem;
+  }
+
+  nav {
+    height: 3.5rem; 
+  }
+
+  .nav__header {
+    padding: 0.5rem;
+  }
+
+  .nav__links {
+    padding: 1rem; 
+  }
+
+  .nav__logo a {
+    font-size: 1.25rem; 
+  }
+}
